@@ -1,0 +1,72 @@
+[
+    {
+        "id": "75d90a54-6d4c-401a-8459-b99989523f9f",
+        "filename": "data/binaries\\75d90a54-6d4c-401a-8459-b99989523f9f20251120153525.bin",
+        "environment": "dev",
+        "status": "signed",
+        "uploaded_at": "2025-11-20T15:35:25.844849",
+        "signed_path": "c:\\Users\\micho\\upsrj-proyecto-final\\data\\signed\\signed_75d90a54-6d4c-401a-8459-b99989523f9f20251120153525.bin",
+        "signature": "0f472e03f609b24703638334f4f1917be04b3da074d3a081533d1d4ee4e619b8",
+        "timestamp": "2025-11-20T15:35:25.845169"
+    },
+    {
+        "id": "bbc35675-d8a7-476e-bafd-1895e758adbe",
+        "filename": "data/binaries\\bbc35675-d8a7-476e-bafd-1895e758adbe20251120153619.bin",
+        "environment": "prod",
+        "status": "signed",
+        "uploaded_at": "2025-11-20T15:36:19.607862",
+        "signed_path": "c:\\Users\\micho\\upsrj-proyecto-final\\data\\signed\\signed_bbc35675-d8a7-476e-bafd-1895e758adbe20251120153619.bin",
+        "signature": "0f472e03f609b24703638334f4f1917be04b3da074d3a081533d1d4ee4e619b8",
+        "timestamp": "2025-11-20T15:36:19.608222"
+    },
+    {
+        "id": "bf2a11d7-9046-4190-9f27-00aa120832a1",
+        "filename": "data/binaries\\bf2a11d7-9046-4190-9f27-00aa120832a120251120183920.bin",
+        "environment": "dev",
+        "status": "signed",
+        "uploaded_at": "2025-11-20T18:39:20.569763",
+        "signed_path": "c:\\Users\\micho\\upsrj-proyecto-final\\data\\signed\\signed_bf2a11d7-9046-4190-9f27-00aa120832a120251120183920.bin",
+        "signature": "0f472e03f609b24703638334f4f1917be04b3da074d3a081533d1d4ee4e619b8",
+        "timestamp": "2025-11-20T18:39:20.570372"
+    },
+    {
+        "id": "7f202863-e18f-498a-a96c-72d3ed22f56a",
+        "filename": "data/binaries\\7f202863-e18f-498a-a96c-72d3ed22f56a20251120184038.bin",
+        "environment": "dev",
+        "status": "signed",
+        "uploaded_at": "2025-11-20T18:40:38.468830",
+        "signed_path": "c:\\Users\\micho\\upsrj-proyecto-final\\data\\signed\\signed_7f202863-e18f-498a-a96c-72d3ed22f56a20251120184038.bin",
+        "signature": "0f472e03f609b24703638334f4f1917be04b3da074d3a081533d1d4ee4e619b8",
+        "timestamp": "2025-11-20T18:40:38.469221"
+    },
+    {
+        "id": "c8d4d61f-504c-4662-b1e2-b893d54a5da8",
+        "filename": "data/binaries\\c8d4d61f-504c-4662-b1e2-b893d54a5da820251120184056.bin",
+        "environment": "prod",
+        "status": "signed",
+        "uploaded_at": "2025-11-20T18:40:56.236786",
+        "signed_path": "c:\\Users\\micho\\upsrj-proyecto-final\\data\\signed\\signed_c8d4d61f-504c-4662-b1e2-b893d54a5da820251120184056.bin",
+        "signature": "0f472e03f609b24703638334f4f1917be04b3da074d3a081533d1d4ee4e619b8",
+        "timestamp": "2025-11-20T18:40:56.237242"
+    },
+    {
+        "id": "3524fb49-3c52-4b3f-8087-8da6f8eaf618",
+        "filename": "data/binaries\\3524fb49-3c52-4b3f-8087-8da6f8eaf61820251121142853.bin",
+        "environment": "dev",
+        "status": "signed",
+        "uploaded_at": "2025-11-21T14:28:53.335337",
+        "signed_path": "c:\\Users\\micho\\upsrj-proyecto-final\\data\\signed\\signed_3524fb49-3c52-4b3f-8087-8da6f8eaf61820251121142853.bin",
+        "signature": "0f472e03f609b24703638334f4f1917be04b3da074d3a081533d1d4ee4e619b8",
+        "timestamp": "2025-11-21T14:28:53.335852"
+    },
+    {
+        "id": "25ef1a44-2acc-40ab-9601-8c907c7a5e74",
+        "filename": "data/binaries\\25ef1a44-2acc-40ab-9601-8c907c7a5e7420251121142959.bin",
+        "environment": "prod",
+        "status": "signed",
+        "uploaded_at": "2025-11-21T14:29:59.849338",
+        "signed_path": "c:\\Users\\micho\\upsrj-proyecto-final\\data\\signed\\signed_25ef1a44-2acc-40ab-9601-8c907c7a5e7420251121142959.bin",
+        "signature": "0f472e03f609b24703638334f4f1917be04b3da074d3a081533d1d4ee4e619b8",
+        "timestamp": "2025-11-21T14:29:59.849876"
+    }
+]

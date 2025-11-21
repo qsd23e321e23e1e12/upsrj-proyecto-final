@@ -11,7 +11,9 @@ class JsonRepository(object):
 
     def __ensure_database(self) -> None:
         directory = os.path.dirname(self.json_path)
-        if not os.path.exists(directory):
+        
+        # CORRECCIÓN: Solo intentar crear directorio si 'directory' NO está vacío
+        if directory and not os.path.exists(directory):
             os.makedirs(directory)
 
         if not os.path.exists(self.json_path):
@@ -19,8 +21,18 @@ class JsonRepository(object):
                 json.dump([], db_file, indent=4)
 
     def __load_data(self) -> List[Dict[str, Any]]:
-        with open(self.json_path, "r", encoding="utf-8") as db_file:
-            return json.load(db_file)
+        if not os.path.exists(self.json_path):
+            return []
+            
+        try:
+            with open(self.json_path, "r", encoding="utf-8") as db_file:
+                content = db_file.read().strip()
+                if not content:
+                    return []
+                db_file.seek(0)
+                return json.load(db_file)
+        except (json.JSONDecodeError, Exception):
+            return []
 
     def __save_data(self, data: List[Dict[str, Any]]) -> None:
         with open(self.json_path, "w", encoding="utf-8") as db_file:
@@ -28,21 +40,25 @@ class JsonRepository(object):
 
     def add_record(self, record: Dict[str, Any]) -> None:
         data = self.__load_data()
-        record["timestamp"] = datetime.now().isoformat()
+        if "timestamp" not in record:
+            record["timestamp"] = datetime.now().isoformat()
         data.append(record)
         self.__save_data(data)
 
     def get_record(self, file_id: str) -> Optional[Dict[str, Any]]:
         data = self.__load_data()
         for entry in data:
-            if entry.get("file_id") == file_id:
+            # Busca por 'id' (nuevo) o 'file_id' (viejo)
+            current_id = entry.get("id") or entry.get("file_id")
+            if current_id == file_id:
                 return entry
         return None
 
     def update_record(self, file_id: str, updates: Dict[str, Any]) -> bool:
         data = self.__load_data()
         for entry in data:
-            if entry.get("file_id") == file_id:
+            current_id = entry.get("id") or entry.get("file_id")
+            if current_id == file_id:
                 entry.update(updates)
                 self.__save_data(data)
                 return True
@@ -53,7 +69,10 @@ class JsonRepository(object):
 
     def delete_record(self, file_id: str) -> bool:
         data = self.__load_data()
-        new_data = [entry for entry in data if entry.get("file_id") != file_id]
+        new_data = [
+            entry for entry in data 
+            if (entry.get("id") or entry.get("file_id")) != file_id
+        ]
 
         if len(new_data) != len(data):
             self.__save_data(new_data)
