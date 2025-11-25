@@ -1,3 +1,16 @@
+# ============================================================
+# Politécnica de Santa Rosa
+#
+# Materia: Arquitecturas de Software
+# Profesor: Jesús Salvador López Ortega
+# Grupo: ISW28
+# Archivo: models.py
+# Descripción: Definición de las Entidades del Dominio (Core).
+#              Este módulo contiene las clases de datos (dataclasses) que
+#              representan los conceptos fundamentales del negocio, como
+#              BinaryFile, asegurando la integridad de la información
+#              independientemente de la base de datos o framework externo.
+# ============================================================
 from dataclasses import dataclass, asdict
 from datetime import datetime
 from typing import Dict, Any, Optional

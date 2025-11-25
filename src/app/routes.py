@@ -1,3 +1,15 @@
+# ============================================================
+# Politécnica de Santa Rosa
+#
+# Materia: Arquitecturas de Software
+# Profesor: Jesús Salvador López Ortega
+# Grupo: ISW28
+# Archivo: routes.py
+# Descripción: Módulo encargado de definir y registrar las rutas (endpoints)
+#              de la aplicación Flask. Actúa como controlador recibiendo las
+#              peticiones HTTP (subida, firma, aprobación) y orquestando 
+#              la ejecución de los Casos de Uso correspondientes.
+# ============================================================
 from flask import request, jsonify, render_template, current_app
 from src.application.use_cases import UploadBinaryUseCase, SignBinaryUseCase, ApproveBinaryUseCase
 from src.infrastructure.file_repository import FileRepository

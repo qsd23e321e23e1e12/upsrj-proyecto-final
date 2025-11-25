@@ -1,3 +1,15 @@
+# ============================================================
+# Politécnica de Santa Rosa
+#
+# Materia: Arquitecturas de Software
+# Profesor: Jesús Salvador López Ortega
+# Grupo: ISW28
+# Archivo: use_cases.py
+# Descripción: Define los Casos de Uso del sistema (Capa de Aplicación).
+#              Estas clases orquestan la lógica de negocio coordinando la 
+#              interacción entre los repositorios (infraestructura), los 
+#              servicios de dominio (firma) y los modelos de datos.
+# ============================================================
 from datetime import datetime
 from uuid import uuid4
 from typing import Optional

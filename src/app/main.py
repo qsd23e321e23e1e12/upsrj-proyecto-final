@@ -1,3 +1,14 @@
+# ============================================================
+# Politécnica de Santa Rosa
+#
+# Materia: Arquitecturas de Software
+# Profesor: Jesús Salvador López Ortega
+# Grupo: ISW28
+# Archivo: main.py 
+# Descripción: Punto de entrada de la aplicación. Configura e inicializa el 
+#              servidor Flask, establece la conexión SMTP para el servicio de 
+#              correos y registra las rutas del sistema.
+# ============================================================
 import sys
 import os
 from pathlib import Path

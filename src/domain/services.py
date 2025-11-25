@@ -1,3 +1,15 @@
+# ============================================================
+# Politécnica de Santa Rosa
+#
+# Materia: Arquitecturas de Software
+# Profesor: Jesús Salvador López Ortega
+# Grupo: ISW28
+# Archivo: services.py
+# Descripción: Servicios de Dominio que encapsulan la lógica pura del negocio.
+#              El SigningService implementa la funcionalidad core del sistema:
+#              calcular el hash SHA-256 de un archivo binario y generar una
+#              copia firmada, operando directamente sobre las entidades.
+# ============================================================
 import os
 import hashlib
 from typing import Tuple
