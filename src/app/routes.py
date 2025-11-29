@@ -53,6 +53,8 @@ def register_routes(app):
         return jsonify({"error": "Error signing"}), 500
 
     # --- RUTA QUE SE ABRE DESDE EL CORREO ---
+    # Archivo: src/app/routes.py (Sección específica de approve_file)
+
     @app.route('/approve/<file_id>', methods=['GET'])
     def approve_file(file_id):
         sign_use_case = SignBinaryUseCase(FileRepository(), JsonRepository(), SigningService())
@@ -60,16 +62,85 @@ def register_routes(app):
         
         success = approve_use_case.execute(file_id)
         
+        # Estilos CSS incrustados para la página de respuesta
+        page_style = """
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                background-color: #1c1c1c;
+                color: #f0f0f0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+            .card {
+                background-color: #2a2a2a;
+                padding: 40px;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                text-align: center;
+                max-width: 400px;
+                border: 1px solid #444;
+            }
+            .icon { font-size: 60px; margin-bottom: 20px; }
+            h1 { margin: 0 0 15px 0; font-size: 24px; }
+            p { color: #aaa; line-height: 1.5; }
+            .btn {
+                display: inline-block;
+                margin-top: 25px;
+                padding: 12px 25px;
+                background-color: #E63946;
+                color: white;
+                text-decoration: none;
+                border-radius: 6px;
+                font-weight: bold;
+                transition: background 0.3s;
+            }
+            .btn:hover { background-color: #C0303E; }
+        </style>
+        """
+
         if success:
-            return """
-            <div style="font-family: sans-serif; text-align: center; padding: 50px;">
-                <h1 style="color: #28a745;">¡Archivo Aprobado y Firmado! ✅</h1>
-                <p>El proceso de producción ha finalizado correctamente.</p>
-                <p>Puede cerrar esta ventana y refrescar su panel de control.</p>
-            </div>
+            return f"""
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <title>Aprobación Exitosa</title>
+                {page_style}
+            </head>
+            <body>
+                <div class="card">
+                    <div class="icon">✅</div>
+                    <h1 style="color: #28a745;">¡Operación Exitosa!</h1>
+                    <p>El archivo ha sido aprobado y firmado digitalmente de manera correcta.</p>
+                    <p>El sistema de producción ya cuenta con la versión verificada.</p>
+                    <a href="/" class="btn">Volver al Inicio</a>
+                </div>
+            </body>
+            </html>
             """
         else:
-            return "<h1 style='color: red;'>Error ❌</h1><p>El archivo no existe o ya fue firmado.</p>"
+            return f"""
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <title>Error de Aprobación</title>
+                {page_style}
+            </head>
+            <body>
+                <div class="card" style="border-top: 4px solid #E63946;">
+                    <div class="icon">❌</div>
+                    <h1 style="color: #E63946;">Error en la Operación</h1>
+                    <p>No se pudo aprobar el archivo. Es posible que el enlace haya expirado, el archivo ya esté firmado o no exista.</p>
+                    <a href="/" class="btn">Volver al Inicio</a>
+                </div>
+            </body>
+            </html>
+            """
     
     @app.route('/clear', methods=['POST'])
     def clear_history():
